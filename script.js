@@ -24,12 +24,12 @@ map.on('load', () => {
 	// Bike lanes - GeoJSON file (added via URL for organisation)
     map.addSource('bike-lanes', { // ID created
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/nadineconsunji/GGR472_Lab2/main/Data/BikeRoutes.geojson'  
+        data: 'https://raw.githubusercontent.com/nadineconsunji/GGR472_Lab3/main/Data/BikeRoutes.geojson'  
     });
 
     map.addSource('provterr-data', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/nadineconsunji/GGR472_Lab3/main/Data/trial.geojson'
+        data: 'https://raw.githubusercontent.com/nadineconsunji/GGR472_Lab3/main/Data/bikeshare.geojson'
     });
 
 // 2. Visualise data layers/load them into the map 
@@ -45,22 +45,37 @@ map.on('load', () => {
         }
     });
 
+	// Bike lanes illustrated through lines 
+    map.addLayer({
+        id: 'bike-lanes-line', // ID created
+        type: 'line', // Line format
+        source: 'bike-lanes', // Link to name of the source 
+        // Formatting
+        paint: {
+            'line-width': 2, 
+            'line-color': '#007cbf'
+        }
+    },
+        'outdoor-bike-parking-ppt' // Ensures points are layered above lines 
+    );
+
     map.addLayer({
         'id': 'provterr-fill',
         'type': 'fill',
         'source': 'provterr-data',
         'paint': {
-            'fill-color': '#c90000'
+            'fill-color': [
+                'step', // STEP expression produces stepped results based on value pairs
+                ['to-number', ['get', 'bike_share']], // GET expression retrieves property value from 'capacity' data field
+                '#fd8d3c', // Colour assigned to any values < first step
+                15, '#fc4e2a', // Colours assigned to values >= each step
+                30, '#e31a1c',
+                45, '#bd0026',
+                60, '#800026'
+            ],
+            'fill-opacity': 0.5,
+            'fill-outline-color': 'white'
         }
     });
-
-	// // Bike lanes illustrated through lines 
-    // map.addLayer({
-    //     id: 'bike-lanes-line', // ID created
-    //     type: 'line', // Line format
-    //     source: 'bike-lanes', // Link to name of the source 
-    // },
-    //     'outdoor-bike-parking-ppt' // Ensures points are layered above lines 
-    // );
 
 });
