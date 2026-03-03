@@ -1,0 +1,115 @@
+<!-- Declare document type as HTML-->
+<!DOCTYPE html>
+
+<!-- Set HTML language to English and theme to light/white -->
+<html lang="en" data-bs-theme="light"> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Make layout responsive on other/mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Website title displayed in browser tab -->
+    <title>GGR472: Lab 2</title> 
+    <!-- Mapbox GL JS library (JavaScript loaded in for interactive maps) -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.18.1/mapbox-gl.js'></script>
+    <!-- Mapbox GL CSS (CSS loaded in for styling) -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.18.1/mapbox-gl.css' rel='stylesheet' /> 
+    <!-- mapbox geocoder plugin -->
+    <script
+        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.1.0/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.1.0/mapbox-gl-geocoder.css"
+        type="text/css">
+    <!-- Custom stylesheet for additional styling -->
+    <link rel="stylesheet" href="style.css"> 
+    <!-- Bootstrap CSS (for responsive layout/grids) -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> <!--linking to bootstrap -->
+</head>
+
+<body>
+	<!-- Boostrap navigation bar to expand horizontally on large screens (navbar-expand-lg)
+     have a dark colour scheme (navbar-dark bg-dark) and stay frozen at the top of the viewport (fixed-top) -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <!-- Title section of navbar -->
+            <a class="navbar-brand">GGR472: Lab 2</a>
+            <!-- Compress navbar menu button for smaller screens -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Title section of navbar -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Push items to the left of the page (me-auto) -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- Navigation bar options linked to other HTML pages -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                         <!-- Active indicates the current page -->
+                        <a class="nav-link active" aria-current="page" href="BikeLanes.html">Bike Lanes and Parking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="TTCStations.html">TTC Stations</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <br>
+
+    <!-- Container for main content - centre all text inside container, black background with white text
+    Add padding/margin to the top and bottom of the page (p-1, mb-2) -->
+    <div class="container text-center p-1 mb-2 bg-white text-black">
+        <!-- Row to structure heading within Bootstrap grid system -->
+        <div class="row">
+            <!-- Heading section -->
+            <h1>Biking in Toronto: Lanes and Outdoor Parking Locations</h1>
+        </div>
+        <!-- Descriptive text with certain words in different colours -->
+         <div class="row">
+            <p>Bike lanes are depicted in the <span style="color: #007cbf;">blue lines</span> and outdoor parking locations are shown through the <span style="color: #c90000;">red points</span>.</p>
+            <p>You can use your mouse to move around and zoom in/out on the map.</p>
+        </div>
+
+        <!-- Map of bike lanes and outdoor bike parking -->
+        <div id="my-map" class="map-container"></div>
+
+        <!-- NAVIGATION ELEMENTS
+        <div class="map-search-container">
+            <label for="geocoder">Search for location</label>
+            <div id="my-geocoder" class="geocoder"></div>
+        </div> -->
+
+        <!-- LEGEND
+        <div id='popn-legend' class='legend'>
+            <h4>Population</h4>
+            <div><span></span>0-100,000</div> 
+            <div><span></span>100,000-500,000</div>
+            <div><span></span>500,000-1,000,000</div>
+            <div><span></span>1,000,000-5,000,000</div>
+            <div><span></span>>5,000,000</div>
+        </div> -->
+
+        <br>
+
+        <!-- Link to external webpage about Toronto's bike lanes, view in same window -->
+        <p>
+            Learn more about Toronto's bike lanes
+            <a class="btn btn-dark" target=”_blank” href="https://www.toronto.ca/services-payments/streets-parking-transportation/cycling-in-toronto/cycling-network-map/#location=&lat=&lng=&zoom=">here</a>
+            <br>
+        </p>
+
+<!-- Bootstrap JavaScript bundle (for interactive components)-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- My JavaScript file loaded in -->
+<script src="script.js"></script>
+
+</body>
+
+</html>

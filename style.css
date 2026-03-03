@@ -1,0 +1,11 @@
+/* Formatting the map */
+.map-container {
+  width: 100%; /* Map takes up 100% of the width of the page */
+  height: 500px; /* Map height */
+  position: relative;/* Map location determined relative to its normal position in the document */
+}
+
+/* 'pads' the top of a webpage so that text/information begins after the navigation bar */
+body {
+  padding-top: 62px;
+}
