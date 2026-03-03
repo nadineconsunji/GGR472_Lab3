@@ -3,9 +3,183 @@
   width: 100%; /* Map takes up 100% of the width of the page */
   height: 500px; /* Map height */
   position: relative;/* Map location determined relative to its normal position in the document */
+  z-index: 500;
+}
+
+.map-search-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    top: 0;
+    left: 0;
+    width: 260px;
+    margin: 10px 0 0 10px;
+    padding: 10px;
+    border-radius: 8px;
+    overflow: visible;
+}
+
+#returnbutton {
+    position: relative;
+    margin: 10px 0 10px;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+/* Formatting geocoder */
+.geocoder {
+    position: relative;
+    margin: 10px 0;
 }
 
 /* 'pads' the top of a webpage so that text/information begins after the navigation bar */
 body {
   padding-top: 62px;
+}
+
+/* format map data container */
+.map-data-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    width: 260px;
+    top: 0;
+    left: 10px;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    overflow: visible;
+    z-index: 1000;
+}
+
+.option-label {
+    font: 20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    width: 95%;
+    padding-bottom: 5px;
+    position: relative;
+    z-index: 1000;
+}
+
+.form-check-label {
+    font: 15px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    position: relative;
+    z-index: 1000;
+}
+
+.form {
+    padding-bottom: 20px;
+    position: relative;
+    z-index: 1000;
+}
+
+/*--------------------------------------------------------------------
+Formatting Bike Share map legend
+--------------------------------------------------------------------*/
+/* Formatting map legend */
+#bikeshare-legend {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    bottom: 0;
+    right: 0;
+    margin: 0 10px 30px 0; /*top margin, right margin, bottom margin, left margin*/
+    padding: 10px; /*around elements inside of overlay*/
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 200px;
+    z-index: 1000;
+}
+
+#bikeshare-legend h4 {
+    margin: 0 0 10px;
+}
+
+#bikeshare-legend div {
+    margin-bottom: 5px;
+}
+
+/* Change font size of ranges in legend */
+#bikeshare-legend div {
+    font-size: 18px;
+}
+
+#bikeshare-legend span {
+    display: inline-block;
+    border-radius: 50%; /*curve border to make a circle*/
+    height: 10px; /*size of circle*/
+    width: 10px;
+    margin-right: 5px; /*position of circle*/
+}
+
+/* Add colour to each child div in legend */
+#bikeshare-legend div:nth-child(2) span {
+    background-color: #fd8d3c; /* set background colour of span */
+}
+
+#bikeshare-legend div:nth-child(3) span {
+    background-color: #fc4e2a;
+}
+
+#bikeshare-legend div:nth-child(4) span {
+    background-color: #e31a1c;
+}
+
+#bikeshare-legend div:nth-child(5) span {
+    background-color: #bd0026;
+}
+
+#bikeshare-legend div:nth-child(6) span {
+    background-color: #800026;
+}
+
+/*--------------------------------------------------------------------
+Formatting regular legend
+--------------------------------------------------------------------*/
+#routes-parking-legend {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    bottom: 0;
+    right: 210px;
+    margin: 0 10px 30px 0; /*top margin, right margin, bottom margin, left margin*/
+    padding: 10px; /*around elements inside of overlay*/
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 190px;
+    z-index: 1100;
+}
+
+#routes-parking-legend h4 {
+    margin: 0 0 10px;
+}
+
+#routes-parking-legend div {
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+/* Change font size of ranges in legend */
+#routes-parking-legend div {
+    font-size: 18px;
+}
+
+#routes-parking-legend span {
+    display: inline-block;
+    border-radius: 50%; /*curve border to make a circle*/
+    height: 10px; /*size of circle*/
+    width: 10px;
+    margin-right: 5px; /*position of circle*/
+}
+
+/* Add colour to each child div in legend */
+#routes-parking-legend div:nth-child(2) span {
+    background-color: #276221; /* set background colour of span */
+    width: 30px;      /* length of line */
+    height: 4px;      /* thickness */
+    border-radius: 2px; /* slight rounding (optional) */
+}
+
+#routes-parking-legend div:nth-child(3) span {
+    background-color: #000000;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
 }

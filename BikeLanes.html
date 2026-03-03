@@ -10,12 +10,12 @@
     <!-- Make layout responsive on other/mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Website title displayed in browser tab -->
-    <title>GGR472: Lab 2</title> 
+    <title>GGR472: Lab 3</title> 
     <!-- Mapbox GL JS library (JavaScript loaded in for interactive maps) -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v3.18.1/mapbox-gl.js'></script>
     <!-- Mapbox GL CSS (CSS loaded in for styling) -->
     <link href='https://api.mapbox.com/mapbox-gl-js/v3.18.1/mapbox-gl.css' rel='stylesheet' /> 
-    <!-- mapbox geocoder plugin -->
+    <!-- Mapbox geocoder plugin -->
     <script
         src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.1.0/mapbox-gl-geocoder.min.js"></script>
     <link rel="stylesheet"
@@ -33,7 +33,7 @@
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <!-- Title section of navbar -->
-            <a class="navbar-brand">GGR472: Lab 2</a>
+            <a class="navbar-brand">GGR472: Lab 3</a>
             <!-- Compress navbar menu button for smaller screens -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -69,31 +69,64 @@
         <div class="row">
             <!-- Heading section -->
             <h1>Biking in Toronto: Lanes and Outdoor Parking Locations</h1>
-        </div>
-        <!-- Descriptive text with certain words in different colours -->
-         <div class="row">
-            <p>Bike lanes are depicted in the <span style="color: #007cbf;">blue lines</span> and outdoor parking locations are shown through the <span style="color: #c90000;">red points</span>.</p>
-            <p>You can use your mouse to move around and zoom in/out on the map.</p>
+            <p>Click on a neighbourhood to see its name!</p>
         </div>
 
         <!-- Map of bike lanes and outdoor bike parking -->
-        <div id="my-map" class="map-container"></div>
+        <div id="my-map" class="map-container">
+            <!-- NAVIGATION ELEMENTS -->
+            <div class='map-search-container'>
+                <button type="button" class="btn btn-success btn-lg rounded-pill shadow-sm" id="returnbutton">Original View</button>
+            </div>
 
-        <!-- NAVIGATION ELEMENTS
-        <div class="map-search-container">
-            <label for="geocoder">Search for location</label>
-            <div id="my-geocoder" class="geocoder"></div>
-        </div> -->
+            <!-- Add legend -->
+            <div id='bikeshare-legend' class='legend'>
+                <h4>Number of Bike Share Stations</h4>
+                <div><span></span>0-15</div> 
+                <div><span></span>15-30</div>
+                <div><span></span>30-45</div>
+                <div><span></span>45-60</div>
+                <div><span></span>>60</div>
+            </div>
 
-        <!-- LEGEND
-        <div id='popn-legend' class='legend'>
-            <h4>Population</h4>
-            <div><span></span>0-100,000</div> 
-            <div><span></span>100,000-500,000</div>
-            <div><span></span>500,000-1,000,000</div>
-            <div><span></span>1,000,000-5,000,000</div>
-            <div><span></span>>5,000,000</div>
-        </div> -->
+            <div id='routes-parking-legend' class='legend'>
+                <h4>Key</h4>
+                <div><span></span>Bike lanes</div> 
+                <div><span></span>Outdoor Parking Locations</div>
+            </div>
+
+            <div class='map-data-container'>
+                <label class="option-label" for="layercheck">Filter map view</label>
+
+                <!-- Checkbox to show/hide layer -->
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="layercheck" checked>
+                    <label class="form-check-label" for="layercheck">Show Bike Share stations layer</label>
+                </div>
+
+                <!-- Checkbox to show/hide legend -->
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="legendcheck" checked>
+                    <label class="form-check-label" for="legendcheck">Show legends</label>
+                </div>
+
+                <!-- Dropdown for selecting a province/territory -->
+                <form>
+                    <fieldset id="boundaryfieldset">
+                        <label class="option-label">Select neighbourhood</label>
+                        <select id="boundary" name="boundary">
+                            <option value="" disabled selected>Select neighbourhood near UofT...</option>
+                            <option value="All">Show all neighbourhoods</option>
+                            <option value="Bay-Cloverhill">Bay-Cloverhill</option>
+                            <option value="University">University</option>
+                            <option value="Kensington-Chinatown">Kensington-Chinatown</option>
+                        </select>
+                    </fieldset>
+                </form>
+
+            </div>
+
+        </div>
 
         <br>
 
