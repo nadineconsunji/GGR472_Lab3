@@ -24,12 +24,12 @@ map.on('load', () => {
 	// Bike lanes - GeoJSON file (added via URL for organisation)
     map.addSource('bike-lanes', { // ID created
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/nadineconsunji/GGR472_Lab3/main/Data/BikeRoutes.geojson'  
+        data: 'Data/BikeRoutes.geojson'  
     });
 
     map.addSource('bikeshare', {
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/nadineconsunji/GGR472_Lab3/refs/heads/main/Data/bikeshare.geojson'
+        data: 'Data/bikeshare.geojson'
     });
 
 // 2. Visualise data layers/load them into the map 
