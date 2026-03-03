@@ -18,7 +18,7 @@ map.on('load', () => {
 	// Outdoor bike parking - GeoJSON file (added via URL for organisation)
     map.addSource('outdoor-bike-parking', { // ID created
         type: 'geojson',
-        data: 'https://raw.githubusercontent.com/nadineconsunji/GGR472_Lab2/main/Data/OutdoorBicycleParking.geojson' 
+        data: 'Data/OutdoorBicycleParking.geojson' 
     });
 
 	// Bike lanes - GeoJSON file (added via URL for organisation)
