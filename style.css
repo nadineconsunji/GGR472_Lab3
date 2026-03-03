@@ -1,4 +1,4 @@
-/* Formatting the map */
+/* Formatting the map container itself */
 .map-container {
   width: 100%; /* Map takes up 100% of the width of the page */
   height: 500px; /* Map height */
@@ -6,6 +6,7 @@
   z-index: 500;
 }
 
+/* Formatting the return to original view button */
 .map-search-container {
     position: relative;
     background: rgba(255, 255, 255, 0.8);
@@ -25,7 +26,6 @@
     z-index: 1000;
 }
 
-
 /* Formatting geocoder */
 .geocoder {
     position: relative;
@@ -37,7 +37,7 @@ body {
   padding-top: 62px;
 }
 
-/* format map data container */
+/* Format map data container */
 .map-data-container {
     position: relative;
     background: rgba(255, 255, 255, 0.9);
@@ -51,6 +51,7 @@ body {
     z-index: 1000;
 }
 
+/* Format dropdown option label and filter map view label*/
 .option-label {
     font: 20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -60,12 +61,14 @@ body {
     z-index: 1000;
 }
 
+/* Format smaller text */
 .form-check-label {
     font: 15px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     position: relative;
     z-index: 1000;
 }
 
+/* Format dropdown option in the map data container */
 .form {
     padding-bottom: 20px;
     position: relative;
@@ -73,9 +76,9 @@ body {
 }
 
 /*--------------------------------------------------------------------
-Formatting Bike Share map legend
+Formatting Bike Share stations legend
 --------------------------------------------------------------------*/
-/* Formatting map legend */
+/* Formatting placement of the legend */
 #bikeshare-legend {
     position: absolute;
     background-color: rgba(255, 255, 255, 0.7);
@@ -89,10 +92,12 @@ Formatting Bike Share map legend
     z-index: 1000;
 }
 
+/* Format heading */
 #bikeshare-legend h4 {
     margin: 0 0 10px;
 }
 
+/* Format placement of the div from the bottom */
 #bikeshare-legend div {
     margin-bottom: 5px;
 }
@@ -169,14 +174,15 @@ Formatting regular legend
     margin-right: 5px; /*position of circle*/
 }
 
-/* Add colour to each child div in legend */
+/* Add line to symbolise bike lanes */
 #routes-parking-legend div:nth-child(2) span {
     background-color: #276221; /* set background colour of span */
     width: 30px;      /* length of line */
     height: 4px;      /* thickness */
-    border-radius: 2px; /* slight rounding (optional) */
+    border-radius: 2px; /* slight rounding */
 }
 
+/* Add point to symbolise outdoor bike parking */
 #routes-parking-legend div:nth-child(3) span {
     background-color: #000000;
     width: 10px;

@@ -69,17 +69,17 @@
         <div class="row">
             <!-- Heading section -->
             <h1>Biking in Toronto: <br> Lanes, Outdoor Parking Locations, and Bike Share Availability</h1>
-            <p>Click on a neighbourhood to see its name!</p>
+            <p>Click on a neighbourhood to see its name or use the navigation bar to search for a specific place!</p>
         </div>
 
         <!-- Map of bike lanes and outdoor bike parking -->
         <div id="my-map" class="map-container">
-            <!-- NAVIGATION ELEMENTS -->
+            <!-- Navigation bar -->
             <div class='map-search-container'>
                 <button type="button" class="btn btn-success btn-lg rounded-pill shadow-sm" id="returnbutton">Original View</button>
             </div>
 
-            <!-- Add legend -->
+            <!-- Bike share station legend -->
             <div id='bikeshare-legend' class='legend'>
                 <h4>Number of Bike Share Stations</h4>
                 <div><span></span>0-15</div> 
@@ -89,28 +89,30 @@
                 <div><span></span>>60</div>
             </div>
 
+            <!-- General legend/key -->
             <div id='routes-parking-legend' class='legend'>
                 <h4>Key</h4>
                 <div><span></span>Bike lanes</div> 
                 <div><span></span>Outdoor Parking Locations</div>
             </div>
-
+            
+            <!-- Filter features -->
             <div class='map-data-container'>
                 <label class="option-label" for="layercheck">Filter map view</label>
 
-                <!-- Checkbox to show/hide layer -->
+                <!-- Checkbox to show/hide bike stations layer -->
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="layercheck" checked>
                     <label class="form-check-label" for="layercheck">Show Bike Share stations layer</label>
                 </div>
 
-                <!-- Checkbox to show/hide legend -->
+                <!-- Checkbox to show/hide legends -->
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="legendcheck" checked>
                     <label class="form-check-label" for="legendcheck">Show legends</label>
                 </div>
 
-                <!-- Dropdown for selecting a province/territory -->
+                <!-- Dropdown for selecting a neighbourhood near UofT -->
                 <form>
                     <fieldset id="boundaryfieldset">
                         <label class="option-label">Select neighbourhood</label>
